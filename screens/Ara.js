@@ -24,8 +24,12 @@ export default function Ara({navigation}) {
   return (
     <View style={styles.view}>
     <View style={styles.container}>
+      <View style={{borderWidth:1, padding:10,width:150, alignItems:'center'}}>
       <Text style={styles.text}>Gidiş</Text>
+    </View>
+    <View style={{borderWidth:1, padding:10,width:150, alignItems:'center'}}>
       <Text style={styles.text}>Gidiş Dönüş</Text>
+    </View>
     </View>
     <View style={styles.inputview}>
         <Text style={styles.text}>Nereden: </Text>
@@ -48,12 +52,12 @@ export default function Ara({navigation}) {
 
 const styles = {
 view:{marginTop:120},
-container:{flexDirection:'row', marginTop: 50, justifyContent: 'space-around', fontSize:20, 
+container:{flexDirection:'row', marginTop: 50, justifyContent: 'space-around', fontSize:20,
             marginBottom:30},
 text:{fontSize:17, fontWeight:'bold'},
 inputview:{ flexDirection: 'row',borderBottomWidth:2, margin:15, padding:1},
 ara:{fontSize:20, alignSelf:'center' },
-araview:{borderWidth:2,  backgroundColor: 'whitesmoke', alignItems:'center',
+araview:{borderWidth:2,  backgroundColor: 'goldenrod', alignItems:'center',
               margin:60, marginLeft:120, marginRight:120, justifyContent: 'center', 
               height:50, }
 }

@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity, Alert} from 'react-native'
+import { View, Text, Image, TextInput, TouchableOpacity, Alert, KeyboardAvoidingView} from 'react-native'
 import React, {useState} from 'react'
 import { useSelector } from 'react-redux';
 
@@ -8,7 +8,7 @@ export default function Giris({navigation}) {
   const [password, setPassword] = useState("");
   const [isValid, setIsValid] = useState(true);
 
-  const user = useSelector(state=> state.auth)
+  const {user} = useSelector(state=> state.auth)
 
   const handleUye= () => {
     navigation.navigate('Kayit')
@@ -28,7 +28,7 @@ const handleGiris = () => {
 };
 
   return (
-    <View>
+    <KeyboardAvoidingView>
       <Image style={styles.logo} source={require("../assets/logo.png")}/>
       <View style={styles.inputview}>
         <Text style={styles.text}>Email: </Text>
@@ -50,7 +50,7 @@ const handleGiris = () => {
       </TouchableOpacity>
       </View>
       
-    </View>
+      </KeyboardAvoidingView>
   )
 }
 
@@ -59,7 +59,7 @@ const styles = {
   text:{fontSize:17, fontWeight:'bold'},
   inputview:{ flexDirection: 'row',borderBottomWidth:2, margin:15, padding:1},
   giris:{fontSize:20, alignSelf:'center' },
-  girisview:{borderWidth:2,  backgroundColor: 'whitesmoke', alignItems:'center', width:100,  
+  girisview:{borderWidth:2,  backgroundColor: 'goldenrod', alignItems:'center', width:100,  
             justifyContent: 'center', height:50,  },
   input:{borderBottomColor: 'black',},
   errorInput: {borderBottomColor: 'red',},
