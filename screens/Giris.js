@@ -18,7 +18,7 @@ export default function Giris({navigation}) {
 const handleGiris = () => {
   if(user.email!=email || user.password!=password){
     Alert.alert('Uyarı:', 'Böyle bir kullanıcı bulunamadı')
-    setIsValid(false);
+    setIsValid(true);
     
     navigation.navigate('Kayit')
   }

@@ -1,6 +1,6 @@
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 import React, {useState} from 'react'
-
+import buses from '../Buses.js'
 
 export default function Ara({navigation}) {
 
@@ -9,27 +9,44 @@ export default function Ara({navigation}) {
   const [kalkis, setKalkis] = useState("");
   const [varis, setVaris] = useState("");
   const [error, setError] = useState(false);
+  const [activeOne, setActiveOne] = useState(false);
+  const [activeTwo, setActiveTwo] = useState(false);
+
+  const handleOneWay = () => {
+    setActiveOne(!activeOne);
+    setActiveTwo(!activeTwo)
+  };
   
-  
+  const handleTwoWay = () => {
+    setActiveTwo(!activeTwo);
+    setActiveOne(!activeOne)
+  };
 
   const handlePress= () => {
     if( varis.length===0 || kalkis.length===0){
       Alert.alert('Uyarı', 'Seçimleri yapınız')
     }
-    else{
+    else if(buses[0].boardingPoints.toString().toLowerCase().includes(kalkis.toLowerCase())=== true  && buses[0].droppingPoints.toString().toLowerCase().includes(varis.toLowerCase())===true){
     navigation.navigate('Seferler')
+  }
+  else{
+    Alert.alert('Uyarı', 'Sefer bulunamadı')
   }
   }
 
   return (
     <View style={styles.view}>
     <View style={styles.container}>
-      <View style={{borderWidth:1, padding:10,width:150, alignItems:'center'}}>
-      <Text style={styles.text}>Gidiş</Text>
-    </View>
-    <View style={{borderWidth:1, padding:10,width:150, alignItems:'center'}}>
-      <Text style={styles.text}>Gidiş Dönüş</Text>
-    </View>
+      <TouchableOpacity style={{borderWidth:1, padding:10,width:150, alignItems:'center', 
+                            backgroundColor: activeOne ? "green" : "white"}} 
+                        onPress={handleOneWay}>
+        <Text style={styles.text}>Gidiş</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={{borderWidth:1, padding:10,width:150, alignItems:'center',
+                                backgroundColor: activeTwo ? "green" : "white"}}
+                        onPress={handleTwoWay} >
+        <Text style={styles.text}>Gidiş Dönüş</Text>
+      </TouchableOpacity>
     </View>
     <View style={styles.inputview}>
         <Text style={styles.text}>Nereden: </Text>
@@ -51,7 +68,7 @@ export default function Ara({navigation}) {
 }
 
 const styles = {
-view:{marginTop:120},
+view:{marginTop:170},
 container:{flexDirection:'row', marginTop: 50, justifyContent: 'space-around', fontSize:20,
             marginBottom:30},
 text:{fontSize:17, fontWeight:'bold'},
