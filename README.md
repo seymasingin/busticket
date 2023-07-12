@@ -25,5 +25,6 @@ Finally, run the Android Studio
 
 # <sub>**Screenshots**</sub>
 
-![bus](https://github.com/seymasingin/busticket/assets/113527683/f68fb75b-7c61-47ce-a59d-67f20f397bba)
+![buyticket](https://github.com/seymasingin/busticket/assets/113527683/4423acf7-1887-498f-86ba-9815ba529ba0)
+
 
