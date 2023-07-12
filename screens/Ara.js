@@ -13,13 +13,27 @@ export default function Ara({navigation}) {
   const [activeTwo, setActiveTwo] = useState(false);
 
   const handleOneWay = () => {
-    setActiveOne(!activeOne);
-    setActiveTwo(!activeTwo)
+  
+    if(activeOne){
+      setActiveOne(false)
+      setActiveTwo(true)
+    }
+     else{
+      setActiveOne(true)
+      setActiveTwo(false)
+     }
+  
   };
   
   const handleTwoWay = () => {
-    setActiveTwo(!activeTwo);
-    setActiveOne(!activeOne)
+    if(activeTwo){
+      setActiveOne(true)
+      setActiveTwo(false)
+    }
+     if(!activeTwo){
+      setActiveOne(false)
+      setActiveTwo(true)
+     }
   };
 
   const handlePress= () => {
@@ -74,7 +88,7 @@ container:{flexDirection:'row', marginTop: 50, justifyContent: 'space-around', f
 text:{fontSize:17, fontWeight:'bold'},
 inputview:{ flexDirection: 'row',borderBottomWidth:2, margin:15, padding:1},
 ara:{fontSize:20, alignSelf:'center' },
-araview:{borderWidth:2,  backgroundColor: 'goldenrod', alignItems:'center',
+araview:{borderWidth:2,  backgroundColor: 'indianred', alignItems:'center',
               margin:60, marginLeft:120, marginRight:120, justifyContent: 'center', 
               height:50, }
 }

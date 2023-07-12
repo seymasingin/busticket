@@ -7,21 +7,10 @@ const buses = [
       price: '1000',
       boardingPoints: ['İstanbul', 'Ankara', 'Bursa', 'İzmir'],
       droppingPoints: ['Antalya', 'Ayvalık', 'Asos', 'Fethiye'],
-      seats: [
-        { no: 1, isBooked: false, gender:'female'},
-        { no: 2, isBooked: true, gender:'male' },
-        { no: 3, isBooked: false, gender:'male' },
-        { no: 4, isBooked: false, gender:'male' },
-        { no: '5', isBooked: false, gender:'male' },
-        { no: '6', isBooked: true, gender:'female' },
-        { no: '7', isBooked: false, gender:'female' },
-        { no: '8', isBooked: true, gender:'male' },
-        { no: '9', isBooked: false, gender:'male' },
-        { no: '10', isBooked: true, gender:'female' },
-        { no: '11', isBooked: false, gender:'female' },
-        { no: '12', isBooked: true, gender:'male' },
-      ],
+      
+      
     },
+    
     {
       id: '102',
       name: 'React Seyahat',

@@ -59,7 +59,7 @@ const styles = {
   text:{fontSize:17, fontWeight:'bold'},
   inputview:{ flexDirection: 'row',borderBottomWidth:2, margin:15, padding:1},
   giris:{fontSize:20, alignSelf:'center' },
-  girisview:{borderWidth:2,  backgroundColor: 'goldenrod', alignItems:'center', width:100,  
+  girisview:{borderWidth:2,  backgroundColor: 'indianred', alignItems:'center', width:100,  
             justifyContent: 'center', height:50,  },
   input:{borderBottomColor: 'black',},
   errorInput: {borderBottomColor: 'red',},

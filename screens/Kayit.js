@@ -150,7 +150,7 @@ const styles = {
     inputview:{ flexDirection: 'row',borderBottomWidth:2, margin:15, padding:1},
     invalidInput: {borderBottomColor: 'red',},
     gender:{flexDirection: 'row', margin:15, alignItems:'center',  },
-    kayit:{borderWidth:2, backgroundColor:'goldenrod', paddingVertical:8, alignItems:'center',
+    kayit:{borderWidth:1, backgroundColor:'indianred', paddingVertical:8, alignItems:'center',
              },
     dropdown:{width:115, height:10, backgroundColor: 'whitesmoke', marginLeft:80, borderWidth:1,
               borderRadius:0},
